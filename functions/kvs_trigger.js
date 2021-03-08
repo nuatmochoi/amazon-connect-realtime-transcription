@@ -40,7 +40,7 @@ exports.handler = (event, context, callback) => {
             connectContactId: event.Details.ContactData.ContactId,
             transcriptionEnabled: event.Details.ContactData.Attributes.transcribeCall === "true" ? true : false,
             saveCallRecording: event.Details.ContactData.Attributes.saveCallRecording === "false" ? false : true,
-            languageCode: event.Details.ContactData.Attributes.languageCode === "es-US" ? "es-US" : "en-US",
+            languageCode: event.Details.ContactData.Attributes.languageCode === "ko-KR" ? "ko-KR" : "ko-KR",
             // These default to true for backwards compatability purposes
             streamAudioFromCustomer: event.Details.ContactData.Attributes.streamAudioFromCustomer === "false" ? false : true,
             streamAudioToCustomer: event.Details.ContactData.Attributes.streamAudioToCustomer === "false" ? false : true
@@ -85,7 +85,7 @@ function updateDynamo(event){
     let contactId = event.Details.ContactData.ContactId;
 
     //Sets the timezone environment variable for the Lambda function to east coast. You can change this to your preferred timezone, or remove this line to use UTC
-    process.env.TZ = "America/New_York";
+    process.env.TZ = "Asia/Seoul";
     var tableName = process.env.table_name;
     var currentTimeStamp = new Date().toString();
     var currentDate = new Date().toLocaleDateString();

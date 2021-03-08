@@ -377,7 +377,7 @@ public class KVSTranscribeStreamingLambda implements RequestHandler<Transcriptio
     private static StartStreamTranscriptionRequest getRequest(Integer mediaSampleRateHertz, Optional <String> languageCode) {
 
         return StartStreamTranscriptionRequest.builder()
-                .languageCode(languageCode.isPresent() ? languageCode.get() : LanguageCode.EN_US.toString())
+                .languageCode(languageCode.isPresent() ? languageCode.get() : LanguageCode.KO_KR.toString())
                 .mediaEncoding(MediaEncoding.PCM)
                 .mediaSampleRateHertz(mediaSampleRateHertz)
                 .build();
